@@ -5,13 +5,14 @@ namespace FilamentPro\FilamentBan\Actions;
 use Closure;
 use Filament\Notifications\Notification;
 use Filament\Tables\Actions\BulkAction;
+use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Collection;
 
 class Unban extends BulkAction
 {
     protected bool | Closure $shouldDeselectRecordsAfterCompletion = true;
 
-    protected string | Closure | null $icon = 'heroicon-o-lock-open';
+    protected string | Closure | Htmlable | null $icon = 'heroicon-o-lock-open';
 
     public static function make(?string $name = 'unban'): static
     {

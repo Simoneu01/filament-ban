@@ -7,13 +7,14 @@ use Filament\Forms;
 use Filament\Notifications\Notification;
 use Filament\Support\Enums\MaxWidth;
 use Filament\Tables\Actions\BulkAction;
+use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Collection;
 
 class Ban extends BulkAction
 {
     protected bool | Closure $shouldDeselectRecordsAfterCompletion = true;
 
-    protected string | Closure | null $icon = 'heroicon-o-lock-closed';
+    protected string | Closure | Htmlable | null $icon = 'heroicon-o-lock-closed';
 
     protected MaxWidth | string | Closure | null $modalWidth = 'sm';
 
